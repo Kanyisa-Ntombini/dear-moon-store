@@ -1,0 +1,17 @@
+body {
+   background-color: #f9bdfd;
+}
+
+h1 {
+   color: #441255;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+   height: auto;
+ }
+
+figure {
+   width: 10rem;
+}
