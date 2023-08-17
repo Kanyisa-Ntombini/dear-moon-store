@@ -19,3 +19,8 @@
    - The value of the content attribute is used by search engines to provide a description of your page
 
 ## Body Element
+
+### Header
+-  used to introduce the page, as well as provide a navigation menu
+
+### Main
