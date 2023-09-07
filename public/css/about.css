@@ -1,0 +1,41 @@
+img {
+  width: 50%;
+  margin: 1rem auto;
+  border: 2.5px solid #b12842;
+  border-radius: 50%;
+}
+
+p {
+  margin: 0 1rem;
+}
+
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* .about-me {
+   background-color: lightblue;
+  }
+
+  .profile-pic {
+   background-color: lightgreen;
+  } */
+}

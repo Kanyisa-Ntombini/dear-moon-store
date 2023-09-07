@@ -9,6 +9,10 @@ body {
   line-height: 1.5;
 }
 
+html {
+  font-size: 16px;
+}
+
 h1 {
   font-size: 2.75rem;
   color: #b12842;
@@ -78,7 +82,6 @@ nav > ul > li > a:hover {
   background-size: cover;
 }
 
-
 #black-child {
   margin: 1rem auto;
 }
@@ -95,6 +98,6 @@ figcaption {
 /* Footer */
 
 footer {
-  background-color: #F0B5C7;
+  background-color: #f0b5c7;
   margin: 1rem 0;
 }

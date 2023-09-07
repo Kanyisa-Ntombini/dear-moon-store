@@ -1,3 +1,5 @@
 node_modules/
 gitignore/
 old_index.html
+.env*
+smtp_secrets.sh*
