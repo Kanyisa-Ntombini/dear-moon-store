@@ -1,22 +1,32 @@
-const path = require('path');
-const bodyParser = require('body-parser');
 const express = require('express');
-const PORT = 3000;
-
 const app = express();
-const homePath = path.join(__dirname, '../');
-console.log(homePath);
+const port = 3000;
+const {
+  createTable,
+  addNewVisitor,
+  listAllVisitors,
+} = require('./database_queries');
+const bodyParser = require('body-parser');
+const path = require('path');
+const homePath = path.join(__dirname, '../'); //C:\Users\kanyi\coding\dear-moon\
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(homePath, '/static_files')));
-app.set('views', path.join(homePath, '/static_files/views'));
+app.use(express.static('public'));
+app.set('views', path.join(homePath, '/public/views'));
 app.set('view engine', 'pug');
 
-app.post('/new_visitor', (req, res) => {
-   // const {something} = req.body;
-   res.render(homePath + './static_files/views/thank_you_page');
-})
+app.get('/', (req, res) => {
+  res.send('Hello and Molweni!');
+});
 
-app.listen(PORT, () => {
-   console.log(`Server started on port http://localhost:${PORT}/new_visitor`);
-})
+app.post('/new_visitor', async (req, res) => {
+  const { name, email, message } = req.body;
+
+  await createTable();
+  await addNewVisitor(name, email, message);
+  res.render(homePath + './public/views/thank_you_page');
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
